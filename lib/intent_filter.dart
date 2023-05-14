@@ -2,16 +2,19 @@ class IntentFilter {
   int _priority;
   final List<String> _actions;
   final List<String> _dataSchemes;
+  final List<String>? _dataAuthorities;
   final List<String> _categories;
 
   IntentFilter({
     int? priority,
     List<String>? actions,
     List<String>? dataSchemes,
+    List<String>? dataAuthorities,
     List<String>? categories,
   })  : _priority = priority ?? 0,
         _actions = actions ?? [],
         _dataSchemes = dataSchemes ?? [],
+        _dataAuthorities = dataAuthorities ?? [],
         _categories = categories ?? [];
 
   set priority(int value) {
@@ -38,6 +41,7 @@ class IntentFilter {
       'priority': _priority,
       'actions': _actions,
       'dataSchemes': _dataSchemes,
+      'dataAuthorities': _dataAuthorities,
       'categories': _categories,
     };
   }
@@ -47,6 +51,7 @@ class IntentFilter {
       priority: map['priority'] as int,
       actions: map['actions'] as List<String>,
       dataSchemes: map['dataSchemes'] as List<String>,
+      dataAuthorities: map['dataAuthorities'] as List<String>,
       categories: map['categories'] as List<String>,
     );
   }
