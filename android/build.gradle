@@ -25,6 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace "com.hz.wu.register_broadcast_receiver.register_broadcast_receiver"
     compileSdkVersion 31
 
     compileOptions {
